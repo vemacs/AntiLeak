@@ -11,7 +11,7 @@ public class CheckTask extends BukkitRunnable {
 
 	public void run() {
 		for (World w : Bukkit.getServer().getWorlds()) {
-			if (w.getPlayers().size() == 0 && !w.getName().contains("nether")) {
+			if (w.getPlayers().size() == 0 && w.getName().toLowerCase().contains("pocket")) {
 				Bukkit.getServer().unloadWorld(w, true);
 				antileak().getLogger().info(
 						w.getName() + " was forcefully unloaded!");
